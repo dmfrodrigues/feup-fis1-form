@@ -1,6 +1,8 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{form}[2020/06/20 Document class for exam forms]
 \LoadClass[a4paper]{article}
+
+\RequirePackage[T1]{fontenc}
 % Margins
 \RequirePackage[top=17mm,bottom=0mm,left=5mm,right=5mm]{geometry}
 % Units
@@ -16,6 +18,7 @@
 \newcommand{\matr}[1]{\mathbf{#1}} % undergraduate algebra version
 \DeclareMathOperator{\tr}{tr}
 \RequirePackage{physics}
+\newcommand\unitvec[1]{\hat{#1}}
 % Tables
 \RequirePackage{multirow}
 \RequirePackage{multicol}

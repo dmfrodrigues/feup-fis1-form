@@ -3,5 +3,83 @@
 \title{FIS1 -- Equations form}
 % Document
 \begin{document}
-Hello
+\section*{Kinematics}
+\begin{center} \begin{tabular}{c | c | c | p{115mm}}
+    $\displaystyle \vec{r} = \vec{r}_0 + \int_0^t{\vec{v}\,dt}$ &
+    $\displaystyle \vec{v} = \vec{v}_0 + \int_0^t{\vec{a}\,dt}$ &
+    $\displaystyle a_x = v_x \frac{dv_x}{dx}$ &
+    Consider a body of mass $m$, to which a constant force of magnitude $F=m\,a$ is applied. Then it holds that $v_f^2 - v_i^2 = 2\,a\,\Delta x$, or $v^2 = 2\,a\,\Delta x$.
+\end{tabular} \end{center}
+
+\begin{center}
+    \setlength\extrarowheight{9pt}
+    \begin{tabular}{l | c | c | c}
+        \textbf{Relative motion} & $\vec{r}' = \vec{r} + \vec{r}_O'$ & $\vec{v}' = \vec{v} + \vec{v}_O'$ & $\vec{a}' = \vec{a} + \vec{a}_O'$ \\[7pt] \hline
+        \textbf{Curvilinear motion} & $\vec{v} = \dot{s} \unitvec{e}_t$ & \multicolumn{2}{c}{$\displaystyle \vec{a} = \vec{a}_t + \vec{a}_n = \dot{v} \unitvec{e}_t+\frac{v^2}{R}\unitvec{e}_n$} \\[7pt] \hline
+        \textbf{Circular motion} & $\displaystyle \alpha = \omega \frac{d\omega}{d\theta}$ & \multicolumn{2}{c}{$\vec{a} = \vec{a}_t + \vec{a}_n = \vec{\alpha} \times \vec{r} + \vec{\omega} \times \vec{v}$} \\[7pt]
+    \end{tabular}
+\end{center}
+\section*{Mechanics}
+\begin{center} \begin{tabular}{c | c | c | c | c | c | c}
+    $\displaystyle \vec{F}_R = \sum_{i=1}^{N}{\vec{F}_i}$ &
+    $\displaystyle \vec{F} = \frac{d\vec{p}}{dt}$ &
+    $\displaystyle \vec{p} = m\vec{v}$ & 
+    $\displaystyle \vec{F}_R = m \vec{a}_{CM}$ &
+    $\displaystyle \vec{F}_g = m\vec{g}$ & 
+    \begin{minipage}[c]{30mm}
+        \centering
+        \textbf{Static friction} \\
+        $F_e \leq \mu_e N$
+    \end{minipage} &
+    \begin{minipage}[c]{30mm}
+        \centering
+        \textbf{Kinetic friction} \\
+        $F_c \leq \mu_c N$
+    \end{minipage}
+\end{tabular} \end{center}
+\begin{center} \begin{tabular}{l | c | c | c}
+    \begin{minipage}[c]{50mm}
+        \textbf{Sphere in a fluid} \\
+        $N_R$ -- Reynolds number
+    \end{minipage} &
+    $\displaystyle N_R = rv\left(\frac{\rho}{\eta}\right)$ &
+    $F_f = 6\pi \eta r v$ ($N_R < 1$) & 
+    $\displaystyle F_f = \frac{\pi}{4} \rho r^2 v^2$ ($N_R > 10^3$)
+\end{tabular} \end{center}
+
+\section*{Rigid body dynamics}
+\begin{center} \begin{tabular}{c | c | c | c | c}
+    $\displaystyle \sum_{i=1}^N{\vec{F}_{int}} = \vec{0}$ &
+    $\displaystyle \vec{r}_{CM} = \frac{1}{m} \iiint_Q{\vec{r}\,dm}$ &
+    $\displaystyle \vec{\tau} = \vec{r} \times \vec{F}$ &
+    $\displaystyle \sum_{i=1}^N{\vec{\tau}_i} = \vec{\tau}_R = \matr{I} \vec{\alpha}$ &
+    $\displaystyle I_{zz} = \iiint_Q{\vec{r}^2\,dm} = \iiint_Q{(x^2+y^2)\,dm}$
+\end{tabular} \end{center}
+\begin{center} \begin{tabular}{l c}
+    \begin{minipage}[c]{167mm}
+        \textbf{Parallel axis theorem} \\
+        $I_{CM}$ -- Inertia at the CM axis | $I$ -- Inertia at the axis parallel to the CM axis | $d$ -- Distance between axis
+    \end{minipage} & 
+    $I = I_{CM} + m d^2$
+\end{tabular} \end{center}
+\subsection*{Moments of inertia of some solids}
+\begin{center}
+    \setlength\extrarowheight{16pt}
+    \begin{tabular}{p{67mm} c | p{67mm} c}
+        \textbf{Point particle} & $I = mr^2$ &
+        \begin{minipage}[c]{55mm}
+            \textbf{Spherical shell} \\
+            Internal radius $r$, external radius $R$
+        \end{minipage} & $\displaystyle I = \frac{2}{5} m \left( \frac{R^5-r^5}{R^3-r^3} \right)$ \\[14pt] \hline
+        \begin{minipage}[c]{60mm}
+            \textbf{Thin cylinder} \\
+            Rotation around an axis perpendicular to the cylinder's axis
+        \end{minipage} & $\displaystyle I = \frac{1}{12} m L^2$ &
+        \begin{minipage}[c]{60mm}
+            \textbf{Cylindrical tube with thick walls} \\
+            Rotation around the cylinder's axis \\
+            Internal radius $r$, external radius $R$
+        \end{minipage} & $\displaystyle I = \frac{1}{2}m(R^2+r^2)$ \\[14pt]
+    \end{tabular}
+\end{center}
 \end{document}
