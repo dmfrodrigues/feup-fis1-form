@@ -22,7 +22,7 @@
 % Tables
 \RequirePackage{multirow}
 \RequirePackage{multicol}
-
+\usepackage{tabularx}
 % % Some work
 \def\author#1{\gdef\@author{#1}\gdef\@@author{#1}}
 \def\title#1{\gdef\@title{#1}\gdef\@@title{#1}}

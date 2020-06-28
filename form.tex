@@ -1,6 +1,8 @@
 \documentclass{form}
 \author{Diogo Rodrigues (dmfrodrigues2000@gmail.com)}
 \title{FIS1 -- Equations form}
+
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
 % Document
 \begin{document}
 \section*{Kinematics}
@@ -13,14 +15,14 @@
 
 \begin{center}
     \setlength\extrarowheight{9pt}
-    \begin{tabular}{l | c | c | c}
+    \begin{tabular}{p{50mm} | P{44mm} | P{44mm} | P{44mm}}
         \textbf{Relative motion} & $\vec{r}' = \vec{r} + \vec{r}_O'$ & $\vec{v}' = \vec{v} + \vec{v}_O'$ & $\vec{a}' = \vec{a} + \vec{a}_O'$ \\[7pt] \hline
         \textbf{Curvilinear motion} & $\vec{v} = \dot{s} \unitvec{e}_t$ & \multicolumn{2}{c}{$\displaystyle \vec{a} = \vec{a}_t + \vec{a}_n = \dot{v} \unitvec{e}_t+\frac{v^2}{R}\unitvec{e}_n$} \\[7pt] \hline
         \textbf{Circular motion} & $\displaystyle \alpha = \omega \frac{d\omega}{d\theta}$ & \multicolumn{2}{c}{$\vec{a} = \vec{a}_t + \vec{a}_n = \vec{\alpha} \times \vec{r} + \vec{\omega} \times \vec{v}$} \\[7pt]
     \end{tabular}
 \end{center}
 \section*{Mechanics}
-\begin{center} \begin{tabular}{c | c | c | c | c | c | c}
+\begin{center} \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ccccccc}
     $\displaystyle \vec{F}_R = \sum_{i=1}^{N}{\vec{F}_i}$ &
     $\displaystyle \vec{F} = \frac{d\vec{p}}{dt}$ &
     $\displaystyle \vec{p} = m\vec{v}$ & 
@@ -36,31 +38,31 @@
         \textbf{Kinetic friction} \\
         $F_c \leq \mu_c N$
     \end{minipage}
-\end{tabular} \end{center}
-\begin{center} \begin{tabular}{l | c | c | c}
+\end{tabular*} \end{center}
+\begin{center} \begin{tabular*}{\textwidth}{|@{\extracolsep{\fill}}lccc|} \hline
     \begin{minipage}[c]{50mm}
         \textbf{Sphere in a fluid} \\
         $N_R$ -- Reynolds number
     \end{minipage} &
     $\displaystyle N_R = rv\left(\frac{\rho}{\eta}\right)$ &
     $F_f = 6\pi \eta r v$ ($N_R < 1$) & 
-    $\displaystyle F_f = \frac{\pi}{4} \rho r^2 v^2$ ($N_R > 10^3$)
-\end{tabular} \end{center}
+    $\displaystyle F_f = \frac{\pi}{4} \rho r^2 v^2$ ($N_R > 10^3$) \\ \hline
+\end{tabular*} \end{center}
 
 \section*{Rigid body dynamics}
-\begin{center} \begin{tabular}{c | c | c | c | c}
+\begin{center} \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ccccc}
     $\displaystyle \sum_{i=1}^N{\vec{F}_{int}} = \vec{0}$ &
     $\displaystyle \vec{r}_{CM} = \frac{1}{m} \iiint_Q{\vec{r}\,dm}$ &
     $\displaystyle \vec{\tau} = \vec{r} \times \vec{F}$ &
     $\displaystyle \sum_{i=1}^N{\vec{\tau}_i} = \vec{\tau}_R = \matr{I} \vec{\alpha}$ &
     $\displaystyle I_{zz} = \iiint_Q{\vec{r}^2\,dm} = \iiint_Q{(x^2+y^2)\,dm}$
-\end{tabular} \end{center}
-\begin{center} \begin{tabular}{l c}
+\end{tabular*} \end{center}
+\begin{center} \begin{tabular}{|l c|} \hline
     \begin{minipage}[c]{167mm}
         \textbf{Parallel axis theorem} \\
         $I_{CM}$ -- Inertia at the CM axis | $I$ -- Inertia at the axis parallel to the CM axis | $d$ -- Distance between axis
     \end{minipage} & 
-    $I = I_{CM} + m d^2$
+    $I = I_{CM} + m d^2$ \\ \hline
 \end{tabular} \end{center}
 \subsection*{Moments of inertia of some solids}
 \begin{center}
@@ -82,4 +84,78 @@
         \end{minipage} & $\displaystyle I = \frac{1}{2}m(R^2+r^2)$ \\[14pt]
     \end{tabular}
 \end{center}
+
+\section*{Work and energy}
+\begin{center} \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ccccc}
+    \multirow{2}{*}{$\displaystyle W_{12} = \int_{s_1}^{s_2}{F_t \, ds} = \int_{\vec{r}_1}^{\vec{r}_2}{\vec{F} \cdot d\vec{r}}$} &
+    \multirow{2}{*}{$\displaystyle E_k = \frac{1}{2}mv_{CM}^2 + \frac{1}{2}I_{CM}\omega^2$} &
+    $E_m = E_k + U$ & 
+    \multirow{2}{*}{$\displaystyle U = - \int_{\vec{r}_0}^{\vec{r}}{\vec{F} \cdot d\vec{r}}$} &
+    \multirow{2}{*}{$\displaystyle \int_{s_1}^{s_2}{F_t^{nc} \, ds = \Delta E_m}$} \\
+    & & $U_g = mgz$ & &
+\end{tabular*} \end{center}
+
+\subsection*{Harmonic oscillator}
+\begin{center} \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} cccc}
+    $\Omega = \sqrt{k/m} = 2\pi f$ &
+    $s = A \sin{(\Omega t + \varphi_0)}$ &
+    $U_e = \frac{1}{2} k s^2$ & 
+    $E_m = \frac{1}{2} m v^2 + \frac{1}{2} k s^2$
+\end{tabular*} \end{center}
+
+\section*{Mathematics}
+\begin{center} \begin{tabular}{P{70mm} | P{47mm} | P{70mm}}
+    \begin{minipage}[c]{0.30\textwidth}
+        \centering
+        $\vec{a} \cdot \vec{b} = a\,b\,\cos{\theta} = a_x b_x + a_y b_y + a_z b_z$ \\[5pt]
+        $a = \sqrt{\vec{a} \cdot \vec{a}}$
+    \end{minipage} &
+    $\vec{a} \times \vec{b} = -\vec{b} \times \vec{a}$ &
+    $\vec{a} \times \vec{b} = a\,b\,\sin{\theta}\,\unitvec{n} =
+    \begin{vmatrix}
+        \unitvec{i} & \unitvec{j} & \unitvec{k} \\ 
+        a_x & a_y & a_z \\ 
+        b_x & b_y & b_z
+    \end{vmatrix}$
+\end{tabular} \end{center}
+
+\section*{Maxima}
+\begin{center} \begin{tabular}{l p{52mm} | l p{52mm}}
+    \texttt{? log;} & Help about a function & \texttt{remvalue(a);} & Delete \texttt{a} from memory \\ \hline
+    \texttt{a: makelist(i\^{}3,i,2,6,0.6);} & Create list from expression \texttt{i\^{}3}, index \texttt{i}, from \texttt{2} to \texttt{6} with step \texttt{0.6} & \texttt{solve(\%,x);} & Solve equation with unknown \texttt{x} \\ \hline
+    \texttt{allroots(\%);} & Find all roots of the polynomial & & 
+\end{tabular} \end{center}
+\newpage
+\section*{Space phase / Systems}
+
+TODO
+
+\subsection*{Linear systems}
+\begin{center} \begin{tabular}{P{62mm} P{62mm} P{62mm}}
+    $\displaystyle \vec{r} = \begin{bmatrix}
+        x_1 \\
+        x_2
+    \end{bmatrix}$ &
+    $\displaystyle \frac{d\vec{r}}{dt} = \matr{J}\vec{r}$ &
+    $\displaystyle \matr{J} = \begin{bmatrix}
+        \partial f_1 & \partial x_1 & \partial f_1 & \partial x_2 \\
+        \partial f_2 & \partial x_1 & \partial f_2 & \partial x_2 
+    \end{bmatrix}$
+\end{tabular} \end{center}
+\begin{center} \begin{tabular}{p{75mm} p{115mm}}
+    \textbf{Eigenvalues:} $\lambda^2 - \tr{\matr{A}} + |A| = 0$
+    &
+    \texttt{eigenvectors(A);} \texttt{[1][1]} - eigenvalues; \texttt{[1][2]} - eigenvalues multiplicity; \texttt{[2]} - eigenvectors;
+\end{tabular} \end{center}
+\begin{center} \begin{tabular}{p{65mm} p{65mm} p{55mm}} \hline \hline
+    \textbf{Eigenvalues $\lambda$} & \textbf{Type of point} & \textbf{Stability} \\ \hline
+    2 reals, opposite signals & saddle point & unstable \\
+    2 reals, positive & repulsive node & unstable \\
+    2 reals, negative & attractive node & stable \\
+    2 complex; positive real part & repulsive focus & unstable \\
+    2 complex; negative real part & attractive focus & stable \\
+    2 pure imaginaries & center & stable \\
+    1 real, positive & improper repulsive node & unstable \\
+    1 real, negative & improper attractive node & unstable \\ \hline \hline
+\end{tabular} \end{center}
 \end{document}
