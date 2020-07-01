@@ -1,5 +1,5 @@
 \documentclass{form}
-\author{Diogo Rodrigues (dmfrodrigues2000@gmail.com)}
+\author{Diogo Rodrigues (\href{mailto:dmfrodrigues2000@gmail.com}{dmfrodrigues2000@gmail.com})}
 \title{FIS1 -- Equations form}
 
 \newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
@@ -128,8 +128,47 @@
 \newpage
 \section*{Space phase / Systems}
 
-TODO
-
+\begin{center}
+\begin{tabular}{p{40mm} | p{60mm} | p{80mm}}
+    \textbf{Phase speed} & $\vec{u} = d\vec{r}_f/dt = \dot{s}\unitvec{e}_1 + \dot{v}\unitvec{e}_2 = v\unitvec{e}_1+a_t\unitvec{e}_2$ & $\vec{r}_f = s \unitvec{e}_1 + v \unitvec{e}_2$ \\
+    \textbf{Plot phase space} & \texttt{(f1, f2)} -- phase speed components & \texttt{plotdf([f1,f2],[x1,x2],[x1,a,b],[x2,c,d])} \\
+\end{tabular}
+\end{center}
+\begin{center}
+\begin{tabular}{p{40mm} | p{145mm}}
+    \textbf{Cycle} & Closed curve with indefinite repetition of each state. \\
+    \textbf{Homoclinic orbit} & Closed curve with 1 equilibrium point (oscillation only happens once). \\
+    \textbf{Heteroclinic orbit} & Closed curve with $n>1$ equilibrium point ($n$ oscillation curves). \\
+    \textbf{Node} & Has at least one straight evolution curve (the system does not oscillate). \\
+    \textbf{Focus} & Has no straight evolution curves (the system evolves in a spiral; the system oscillates).
+\end{tabular}
+\end{center}
+\begin{center}
+\begin{tabular}{p{70mm} | P{80mm} | P{30mm}}
+    \multicolumn{3}{l}{A system is \textbf{conservative} iff $\div{\vec{u}} = \partial f_1 / \partial x_1 + \partial f_2 / \partial x_2 = \tr{\matr{J}} = 0$.} \\ \hline
+    If the system is conservative then there is an \textbf{hamiltonian function} $H(s_1, s_2)$ such that &
+    \vspace{-2mm} $\displaystyle f_1 = \dot{s_1} = +\frac{\partial H}{\partial s_2}~~~~~f_2 = \dot{s_2} = -\frac{\partial H}{\partial s_1}$ & \vspace{-2mm} $\displaystyle \frac{dH}{dt} = 0$ \\ \hline
+    \multicolumn{3}{l}{In phase space, an evolution curve is a level curve of $H(s_1,s_2) = k$.} \\ \hline
+    \begin{minipage}{1\linewidth}
+        \textbf{Lagrange equation} \\
+        $q_j$ -- Generalized coordinate | $Q_j$ - Generalized force (not-conservative) in the direction of $q_j$
+    \end{minipage} &
+    $\displaystyle \frac{d}{dt}\left(\frac{\partial E_k}{\partial \dot{q_j}}\right) - \frac{\partial E_k}{\partial q_j} + \frac{\partial U}{\partial q_j} = Q_j$ & $\displaystyle Q_j = \vec{F}_{nc} \cdot \frac{\partial \vec{r}}{\partial q_j}$ \\ \hline
+\end{tabular}
+\end{center}
+\begin{center}
+    \begin{tabular}{p{92mm} | p{92mm}}
+        \texttt{gradef(x,t,x1);} & $\dot{x} := \partial x / \partial t$ \\
+        \texttt{gradef(x1,t,x11);} & $\ddot{x} := \partial \dot{x} / \partial t$ \\
+        \texttt{gradef(q,t,q1);} & $\dot{\theta} = \partial \theta / \partial t$ \\
+        \texttt{gradef(q1,t,q11);} & $\ddot{\theta} = \partial \dot{\theta} / \partial t$ \\
+        \texttt{Ek: 3*x1\^{}2+5*q1\^{}2;} & $E_k = 3 \dot{x}^2 + 5 \dot{\theta} ^2$ \\
+        \texttt{U: -7*x*q;} & $U = -7x \theta$ \\
+        \texttt{diff(diff(Ek,q1),t)-diff(Ek,q)+diff(U,q)=0;} & $\sfrac{d}{dt}(\partial E_k / \partial \dot{\theta}) - \partial E_k / \partial \theta + \partial U / \partial \theta=0$ \\
+        \texttt{solve(\%,q11);} & $\ddot{\theta} = 7x/10$
+    \end{tabular}
+\end{center}
+In a predator-prey system, $\partial f_1 / \partial x_2$ and $\partial f_2 / \partial x_1$ have different sigals.
 \subsection*{Linear systems}
 \begin{center} \begin{tabular}{P{62mm} P{62mm} P{62mm}}
     $\displaystyle \vec{r} = \begin{bmatrix}

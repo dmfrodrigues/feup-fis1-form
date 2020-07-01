@@ -19,6 +19,8 @@
 \DeclareMathOperator{\tr}{tr}
 \RequirePackage{physics}
 \newcommand\unitvec[1]{\hat{#1}}
+\renewcommand\div{\vec{\nabla} \cdot }
+\RequirePackage{xfrac} % \sfrac
 % Tables
 \RequirePackage{multirow}
 \RequirePackage{multicol}
@@ -39,3 +41,5 @@
 \fancyhead[R]{\thepage}
 \fancyhead[C]{\ifx\@@title\@empty\else\@@title\fi}
 \fancyhead[L]{\ifx\@@author\@empty\else\@@author\fi}
+%
+\usepackage{hyperref} % email
