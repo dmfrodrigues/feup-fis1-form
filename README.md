@@ -16,4 +16,4 @@ The equations form is compiled by Github Actions, to see it go to [`Actions`](ht
 
 © 2020 Diogo Rodrigues
 
-All files are licensed under [GNU General Public License v3](LICENSE) by **© 2020 Diogo Rodrigues**.
+All files are licensed under [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International](LICENSE) by **© 2020 Diogo Rodrigues**.
