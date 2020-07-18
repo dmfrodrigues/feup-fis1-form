@@ -1,8 +1,6 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{form}[2020/06/20 Document class for exam forms]
 \LoadClass[a4paper]{article}
-
-\RequirePackage[T1]{fontenc}
 % Margins
 \RequirePackage[top=17mm,bottom=0mm,left=5mm,right=5mm]{geometry}
 % Units
@@ -25,21 +23,22 @@
 \RequirePackage{multirow}
 \RequirePackage{multicol}
 \usepackage{tabularx}
-% % Some work
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+% Some work
 \def\author#1{\gdef\@author{#1}\gdef\@@author{#1}}
 \def\title#1{\gdef\@title{#1}\gdef\@@title{#1}}
 \let\@@author\@empty
 \let\@@title\@empty
-
 % Headers and footers
 \RequirePackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
-\headsep=0pt
-\fancyhead[R]{\thepage}
-\fancyhead[C]{\ifx\@@title\@empty\else\@@title\fi}
+\headsep=10pt
+\newcommand{\vcenteredinclude}[1]{\begingroup
+\setbox0=\hbox{\includegraphics[scale=0.1]{#1}}%
+\parbox{\wd0}{\box0}\endgroup}
+\fancyhead[R]{\rightmark}
+\fancyhead[C]{\textbf{\ifx\@@title\@empty\else\@@title\fi}}
 \fancyhead[L]{\ifx\@@author\@empty\else\@@author\fi}
-%
-\usepackage{hyperref} % email
